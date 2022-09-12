@@ -7,14 +7,19 @@ export default class extends Controller {
     this.showMessageTarget.textContent = "Show secret message"
   }
 
-  show() {
+  showSomething() {
     console.log(this.showMessageTarget.textContent)
     this.showMessageTarget.textContent == "Show secret message" ? this.showMessageTarget.textContent = "Hide secret message" : this.showMessageTarget.textContent = "Show secret message"
     // this.showMessageTarget.textContent = "Hide secret message"
-    this.messageTarget.textContent = "A secret message has appeared!"
-    if (typeof this.messageTarget.textContent !== 'undefined') {
-      
+    if (this.showMessageTarget.textContent == "Show secret message") {
+      this.messageTarget.textContent = ""
+    } else {
+      this.messageTarget.textContent = "A secret message has appeared!"
     }
+  }
+
+  hideSomething() {
+
   }
 
   messageTargetDisconnected(element) {
