@@ -1,14 +1,12 @@
 import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
-  static targets = ["showMessage", "message"]
+  static targets = ["showMessage", "message", "hideable" ]
 
   connect() {
-    this.showMessageTarget.textContent = "Show secret message"
   }
 
   showSomething() {
-    console.log(this.showMessageTarget.textContent)
     this.showMessageTarget.textContent == "Show secret message" ? this.showMessageTarget.textContent = "Hide secret message" : this.showMessageTarget.textContent = "Show secret message"
     // this.showMessageTarget.textContent = "Hide secret message"
     if (this.showMessageTarget.textContent == "Show secret message") {
@@ -18,14 +16,11 @@ export default class extends Controller {
     }
   }
 
-  hideSomething() {
-
+  hideMe() {
+    this.hideableTarget.hidden = true
   }
 
-  messageTargetDisconnected(element) {
-  }
-
-  messageTargetConnected(element) {
-    // this.showMessageTarget.textContent = "Hide secret message"
+  showMe() {
+    this.hideableTarget.hidden = false
   }
 }

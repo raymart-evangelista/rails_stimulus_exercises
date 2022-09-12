@@ -1,15 +1,20 @@
-<%# <h1>This is home!</h1> %>
-
-<%# <div data-controller="hello">
-  <button 
-  data-action="click->hello#nothing"
-  data-hello-target="something">I do nothing!</button>
-  <div data-hello-target="output"></div>
-</div> %>
-
+<div data-controller="hello" data-hello-number-value=4>
+  <h1 data-hello-target="output"></h1>
+  <button data-action="hello#clicked">CLICK ME</button>
+</div>
 <div data-controller="toggle">
   <button
   data-action="toggle#showSomething"
-  data-toggle-target="showMessage"></button>
+  data-toggle-target="showMessage">Show secret message</button>
   <div data-toggle-target="message"></div>
+</div>
+
+<div data-controller="text-input">
+  <input type="text" data-action="input->text-input#changed" data-text-input-target="input">
+  <h1 data-text-input-target="output"></h1>
+</div>
+
+<div data-controller="toggle">
+  <button data-action="toggle#hideMe" data-toggle-target="hideable">hideMe</button>
+  <button data-action="toggle#showMe">show hideMe button</button>
 </div>

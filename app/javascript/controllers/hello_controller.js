@@ -1,26 +1,18 @@
 import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
-  // static targets = [ "name" ]
-  static targets = ["something", "output"]
+  static targets = [ "output" ]
+  static values = { number: Number }
 
-  // greet() {
-  //   const element = this.nameTarget
-  //   const name = element.value
-  //   console.log(`Hello, ${name}!`)
-  //   console.log(this.application)
-  //   console.log(this.element)
-  //   console.log(this.identifier)
+  connect() {
+    this.numberValueChanged()
+  }
 
-  //   const node = document.createElement("div")
-  //   const textnode = document.createTextNode(`Hello, ${name}!`)
-  //   node.appendChild(textnode);
-  //   this.element.appendChild(node)
-  // }
+  clicked() {
+    this.numberValue++
+  }
 
-  nothing() {
-    this.outputTarget.textContent = "Two things happened!"
-    this.somethingTarget.textContent = "Something happened!"
-    // this.somethingTarget.html = this.outputTarget.value 
+  numberValueChanged() {
+    this.outputTarget.textContent = this.numberValue
   }
 }
