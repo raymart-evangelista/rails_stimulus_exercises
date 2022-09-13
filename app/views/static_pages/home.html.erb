@@ -23,3 +23,14 @@
   <button data-action="toggle#showAnotherElem">Show another element</button>
   <h1 data-toggle-target="hideable" hidden>Another element</h1>
 </div>
+
+<div data-controller="toggle">
+  <form action="" data-controller="toggle">
+    <input type="checkbox" name="vehicle1" id="vehicle1"
+    data-action="toggle#highlightElem" data-toggle-target="highlight">
+    <label for="vehicle1">I have a bike</label>
+    <input type="checkbox" name="vehicle2" id="vehicle2">
+    <label for="vehicle2">I have a car</label>
+    <input type="submit" value="submit">
+  </form>
+</div>

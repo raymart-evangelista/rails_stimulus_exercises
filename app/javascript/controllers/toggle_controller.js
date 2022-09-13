@@ -1,7 +1,7 @@
 import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
-  static targets = [ "showMessage", "message", "hideable", "showable" ]
+  static targets = [ "showMessage", "message", "hideable", "showable", "highlight" ]
 
   connect() {
 
@@ -32,6 +32,15 @@ export default class extends Controller {
     }
     if (this.hasHideableTarget) {
       this.hideableTarget.hidden = false
+    }
+  }
+
+  highlightElem() {
+    if (this.highlightTarget.style.outline == "" ||
+    this.highlightTarget.style.outline == "none") {
+      this.highlightTarget.style.outline = "solid red 1px"
+    } else {
+      this.highlightTarget.style.outline = "none"
     }
   }
 }
