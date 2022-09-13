@@ -1,9 +1,10 @@
 import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
-  static targets = ["showMessage", "message", "hideable" ]
+  static targets = [ "showMessage", "message", "hideable", "showable" ]
 
   connect() {
+
   }
 
   showSomething() {
@@ -16,11 +17,21 @@ export default class extends Controller {
     }
   }
 
-  hideMe() {
-    this.hideableTarget.hidden = true
+  hideCurrentElem() {
+    if (this.hasHideableTarget) {
+      this.hideableTarget.hidden = true
+    }
+    if (this.hasShowableTarget) {
+      this.showableTarget.hidden = false
+    }
   }
 
-  showMe() {
-    this.hideableTarget.hidden = false
+  showAnotherElem() {
+    if (this.hasShowableTarget) {
+      this.showableTarget.hidden = true
+    }
+    if (this.hasHideableTarget) {
+      this.hideableTarget.hidden = false
+    }
   }
 }

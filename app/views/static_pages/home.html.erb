@@ -15,6 +15,11 @@
 </div>
 
 <div data-controller="toggle">
-  <button data-action="toggle#hideMe" data-toggle-target="hideable">hideMe</button>
-  <button data-action="toggle#showMe">show hideMe button</button>
+  <button data-action="toggle#hideCurrentElem" data-toggle-target="hideable">click to hide me!</button>
+  <button data-action="toggle#showAnotherElem" data-toggle-target="showable" hidden>show the hidden button</button>
+</div>
+
+<div data-controller="toggle">
+  <button data-action="toggle#showAnotherElem">Show another element</button>
+  <h1 data-toggle-target="hideable" hidden>Another element</h1>
 </div>
