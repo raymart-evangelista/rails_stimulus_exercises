@@ -34,3 +34,12 @@
     <input type="submit" value="submit">
   </form>
 </div>
+
+<div data-controller="text-limit">
+  <%# <input type="text" data-action="text-limit#countRemainingChars" data-text-limit-target="input"> %>
+  <textarea type="text" data-action="text-limit#countRemainingChars"
+  data-text-limit-target="input" cols="30" rows="10"
+></textarea>
+  <p data-text-limit-target="output"></p>
+  <input type="submit" data-text-limit-target="disable" value="submit">
+</div>
